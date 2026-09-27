@@ -1,2 +1,2 @@
-# tdesantijr.github.io
-tjdesanti portfolio
+# TJ Desanti portfolio
+Robotics Engineering 
