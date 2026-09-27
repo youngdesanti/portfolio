@@ -31,6 +31,7 @@
                     animation: {
                         'fade-in': 'fadeIn 0.4s ease-out forwards',
                         'slide-up': 'slideUp 0.5s ease-out forwards',
+                        'peek': 'peek 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.8s',
                     },
                     keyframes: {
                         fadeIn: {
@@ -40,6 +41,11 @@
                         slideUp: {
                             '0%': { opacity: '0', transform: 'translateY(15px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        peek: {
+                            '0%': { transform: 'translateY(20px) rotate(15deg) scale(0)', opacity: '0' },
+                            '50%': { transform: 'translateY(-15px) rotate(-10deg) scale(1.1)', opacity: '1' },
+                            '100%': { transform: 'translateY(0) rotate(5deg) scale(1)', opacity: '1' }
                         }
                     }
                 }
@@ -100,6 +106,7 @@
                 <button onclick="navigateTo('experience')" class="nav-link h-full py-7 text-sm font-medium text-gray-400 hover:text-neon-cyan transition-colors uppercase tracking-wider">Experience</button>
                 <button onclick="navigateTo('skills')" class="nav-link h-full py-7 text-sm font-medium text-gray-400 hover:text-neon-cyan transition-colors uppercase tracking-wider">Skills</button>
                 <button onclick="navigateTo('projects')" class="nav-link h-full py-7 text-sm font-medium text-gray-400 hover:text-neon-cyan transition-colors uppercase tracking-wider">Projects</button>
+                <button onclick="navigateTo('contact')" class="nav-link h-full py-7 text-sm font-medium text-gray-400 hover:text-neon-cyan transition-colors uppercase tracking-wider">Contact</button>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -117,6 +124,7 @@
                 <button onclick="navigateTo('experience')" class="mobile-nav-link p-3 rounded text-left font-medium text-gray-400 hover:text-neon-cyan hover:bg-gray-800">Experience</button>
                 <button onclick="navigateTo('skills')" class="mobile-nav-link p-3 rounded text-left font-medium text-gray-400 hover:text-neon-cyan hover:bg-gray-800">Skills</button>
                 <button onclick="navigateTo('projects')" class="mobile-nav-link p-3 rounded text-left font-medium text-gray-400 hover:text-neon-cyan hover:bg-gray-800">Projects</button>
+                <button onclick="navigateTo('contact')" class="mobile-nav-link p-3 rounded text-left font-medium text-gray-400 hover:text-neon-cyan hover:bg-gray-800">Contact</button>
             </div>
         </div>
     </nav>
@@ -145,10 +153,16 @@
                 <!-- Text Content -->
                 <div class="w-full md:w-2/3 space-y-6 text-center md:text-left animate-slide-up" style="animation-delay: 0.1s;">
                     <p class="font-mono text-neon-cyan text-lg tracking-wider">Hello, my name is</p>
-                    <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight">Timothy Desanti Jr.</h1>
-                    <h2 class="text-2xl md:text-4xl font-semibold text-gray-400">Architecting the next generation of autonomous robotics.</h2>
                     
-                    <div class="bg-cardbg border border-gray-800 p-6 rounded-lg mt-6 max-w-2xl relative border-l-4 border-l-neon-orange shadow-lg">
+                    <div class="relative inline-flex flex-col md:flex-row items-center md:items-start w-max mx-auto md:mx-0">
+                        <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight relative z-10">Timothy Desanti Jr.</h1>
+                        <!-- Cute Popping Robot -->
+                        <img src="https://api.iconify.design/fluent-emoji:robot.svg" alt="Cute robot" class="absolute -top-8 -right-12 md:-right-16 w-16 h-16 md:w-20 md:h-20 opacity-0 animate-peek z-20 drop-shadow-xl hover:scale-110 transition-transform cursor-pointer">
+                    </div>
+
+                    <h2 class="text-2xl md:text-4xl font-semibold text-gray-400">Beep boop... I build robots and automated systems</h2>
+                    
+                    <div class="bg-cardbg border border-gray-800 p-6 rounded-lg mt-6 max-w-2xl relative border-l-4 border-l-neon-orange shadow-lg text-left">
                         <p class="text-lg text-gray-300 leading-relaxed">
                             I am a 4th-year <span class="text-neon-cyan font-medium">Robotics Engineering student</span> with hands-on experience bridging the gap between software and physical hardware. My expertise spans PCB design, embedded systems development, and hardware integration.
                         </p>
@@ -173,24 +187,44 @@
                     <div class="absolute w-4 h-4 bg-darkbg border-2 border-neon-cyan rounded-full -left-[9px] top-1.5 group-hover:bg-neon-cyan transition-colors shadow-[0_0_10px_#06b6d4]"></div>
                     <div class="bg-cardbg border border-gray-800 rounded-xl p-6 md:p-8 hover:border-gray-600 transition-colors">
                         <h3 class="text-2xl font-bold text-white">Engineering Intern</h3>
-                        <h4 class="text-neon-cyan font-medium text-lg mt-1">The NOCO Company</h4>
+                        
+                        <!-- Clickable NOCO Link -->
+                        <h4 class="text-neon-cyan font-medium text-lg mt-1 w-max">
+                            <a href="https://no.co/" target="_blank" class="hover:text-white transition-colors flex items-center gap-2">
+                                The NOCO Company <i class="fas fa-external-link-alt text-sm"></i>
+                            </a>
+                        </h4>
+                        
                         <p class="text-gray-500 font-mono text-sm mt-2 mb-6 flex items-center gap-2">
                             <i class="far fa-calendar text-neon-orange"></i> May 2026 – Sep 2026 | Chandler, AZ
                         </p>
                         <ul class="space-y-3 text-gray-300 list-none">
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-caret-right text-neon-orange mt-1"></i>
+                                <i class="fas fa-caret-right text-neon-orange mt-1 flex-shrink-0"></i>
                                 <span>Performed diagnostic analysis and failure evaluation on lithium-ion battery systems, jump starters, and charging products across the company portfolio.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-caret-right text-neon-orange mt-1"></i>
+                                <i class="fas fa-caret-right text-neon-orange mt-1 flex-shrink-0"></i>
                                 <span>Identified performance/reliability issues in battery systems, implemented effective solutions, and resolved underlying problems.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-caret-right text-neon-orange mt-1"></i>
+                                <i class="fas fa-caret-right text-neon-orange mt-1 flex-shrink-0"></i>
                                 <span>Maintained ownership of product teardowns and technical assessments involving electro-mechanical components.</span>
                             </li>
                         </ul>
+
+                        <!-- NOCO Products Display -->
+                        <div class="mt-8">
+                            <p class="text-xs text-gray-500 font-mono mb-3 uppercase tracking-wider">Example Portfolio Products</p>
+                            <div class="flex flex-wrap gap-4">
+                                <div class="w-32 h-32 rounded-lg bg-gray-900 border border-gray-700 overflow-hidden shadow-lg group/img">
+                                    <img src="https://images.unsplash.com/photo-1620288627223-53302f4e8c74?auto=format&fit=crop&w=300&q=80" alt="Jump Starter Electronics" class="w-full h-full object-cover grayscale opacity-70 group-hover/img:grayscale-0 group-hover/img:opacity-100 transition-all duration-300 hover:scale-110">
+                                </div>
+                                <div class="w-32 h-32 rounded-lg bg-gray-900 border border-gray-700 overflow-hidden shadow-lg group/img">
+                                    <img src="https://images.unsplash.com/photo-1550520920-ce997873895e?auto=format&fit=crop&w=300&q=80" alt="Battery Systems" class="w-full h-full object-cover grayscale opacity-70 group-hover/img:grayscale-0 group-hover/img:opacity-100 transition-all duration-300 hover:scale-110">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -205,15 +239,15 @@
                         </p>
                         <ul class="space-y-3 text-gray-300 list-none">
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-caret-right text-neon-cyan mt-1"></i>
+                                <i class="fas fa-caret-right text-neon-cyan mt-1 flex-shrink-0"></i>
                                 <span>Designed and fabricated robotic systems capable of manual and autonomous task executions in robotic competition events.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-caret-right text-neon-cyan mt-1"></i>
+                                <i class="fas fa-caret-right text-neon-cyan mt-1 flex-shrink-0"></i>
                                 <span>Led the driving team with stellar robotic controls and efficient maneuvers to attain competitive scores.</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <i class="fas fa-caret-right text-neon-cyan mt-1"></i>
+                                <i class="fas fa-caret-right text-neon-cyan mt-1 flex-shrink-0"></i>
                                 <span>Achieved multiple Arizona State Titles and participated in the VEX Robotics World Competition in Dallas.</span>
                             </li>
                         </ul>
@@ -349,6 +383,42 @@
             </div>
         </section>
 
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section id="contact" class="page-section animate-fade-in w-full max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                <span class="text-neon-orange font-mono text-2xl mr-4">04.</span> Get In Touch
+            </h2>
+            
+            <div class="bg-cardbg border border-gray-800 rounded-xl p-8 md:p-10 shadow-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-neon-cyan/5 rounded-full blur-3xl transform translate-x-10 -translate-y-10 pointer-events-none"></div>
+                
+                <p class="text-gray-300 mb-8 leading-relaxed">
+                    Have a question, an opportunity, or want to collaborate on a project? Send a message through the secure form below. Your message will be routed directly to my secure inbox without exposing contact information.
+                </p>
+                
+                <!-- Secure Form Endpoint Placeholder (e.g. Formspree/Netlify Forms) -->
+                <form action="https://formspree.io/f/your_form_id_placeholder" method="POST" class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Your Name</label>
+                            <input type="text" name="name" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Your Email</label>
+                            <input type="email" name="email" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Message</label>
+                        <textarea name="message" rows="5" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors resize-none" placeholder="Hello TJ..."></textarea>
+                    </div>
+                    <button type="submit" class="bg-transparent border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-darkbg font-bold py-3 px-8 rounded-lg transition-all flex items-center justify-center gap-2 w-full md:w-auto">
+                        <i class="fas fa-paper-plane"></i> Transmit Message
+                    </button>
+                </form>
+            </div>
+        </section>
+
     </main>
 
     <!-- ==================== MODALS ==================== -->
@@ -366,11 +436,11 @@
                 <ul class="list-disc pl-5 space-y-2">
                     <li>Analyzed mechanical load and torque requirements for autonomous navigation.</li>
                     <li>Modeled modular chassis and drivetrain configurations for efficient mobility.</li>
-                    <li>Documented development stages, assembly instructions, and testing data via a comprehensive GitHub Pages portfolio (tjdesanti.github.io).</li>
+                    <li>Documented development stages, assembly instructions, and testing data via a comprehensive GitHub Pages portfolio.</li>
                 </ul>
                 <div class="mt-6 pt-6 border-t border-gray-800">
                     <a href="https://tjdesanti.github.io/01-Requirements/Requirements/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded transition-colors font-mono text-sm border border-gray-600">
-                        <i class="fab fa-github"></i> View GitHub Page
+                        <i class="fab fa-github"></i> View Project Requirements
                     </a>
                 </div>
             </div>
