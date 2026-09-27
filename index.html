@@ -159,7 +159,6 @@
                         <img src="https://api.iconify.design/fluent-emoji:robot.svg" alt="Cute robot" class="absolute -top-8 -right-12 md:-right-16 w-16 h-16 md:w-20 md:h-20 opacity-0 animate-peek z-20 drop-shadow-xl hover:scale-110 transition-transform cursor-pointer">
                     </div>
 
-                    <!-- Updated Sized Tagline -->
                     <h2 class="text-lg md:text-2xl font-semibold text-gray-400 whitespace-nowrap">Beep boop... I build robots and automated systems</h2>
                     
                     <div class="bg-cardbg border border-gray-800 p-6 rounded-lg mt-6 max-w-2xl relative border-l-4 border-l-neon-orange shadow-lg text-left">
@@ -389,29 +388,43 @@
                 <span class="text-neon-orange font-mono text-2xl mr-4">04.</span> Contact
             </h2>
             
-            <div class="bg-cardbg border border-gray-800 rounded-xl p-8 md:p-10 shadow-lg relative overflow-hidden">
+            <div class="bg-cardbg border border-gray-800 rounded-xl p-8 md:p-10 shadow-lg relative overflow-hidden space-y-8">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-neon-cyan/5 rounded-full blur-3xl transform translate-x-10 -translate-y-10 pointer-events-none"></div>
                 
-                <!-- Secure Form Endpoint Placeholder (e.g. Formspree/Netlify Forms) -->
-                <form action="https://formspree.io/f/your_form_id_placeholder" method="POST" class="space-y-6 relative z-10">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Your Name</label>
-                            <input type="text" name="name" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="John Doe">
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Feel free to reach out to me on LinkedIn or through my contact information (on my resume).
+                </p>
+
+                <!-- LinkedIn Interactive Button -->
+                <div>
+                    <a href="https://www.linkedin.com/in/tj-desanti/" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 bg-[#0a66c2] hover:bg-[#004182] text-white rounded-lg transition-colors font-mono text-sm font-bold shadow-md">
+                        <i class="fab fa-linkedin text-lg"></i> Connect on LinkedIn
+                    </a>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <p class="text-sm text-gray-400 mb-4 font-mono">Or send a message directly:</p>
+                    <!-- Secure Form Endpoint Placeholder (e.g. Formspree/Netlify Forms) -->
+                    <form action="https://formspree.io/f/your_form_id_placeholder" method="POST" class="space-y-6 relative z-10">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Your Name</label>
+                                <input type="text" name="name" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Your Email</label>
+                                <input type="email" name="email" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="john@example.com">
+                            </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Your Email</label>
-                            <input type="email" name="email" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors" placeholder="john@example.com">
+                            <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Message</label>
+                            <textarea name="message" rows="5" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors resize-none" placeholder="Hello TJ..."></textarea>
                         </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2 font-mono">Message</label>
-                        <textarea name="message" rows="5" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-cyan focus:ring-1 focus:ring-neon-cyan transition-colors resize-none" placeholder="Hello TJ..."></textarea>
-                    </div>
-                    <button type="submit" class="bg-transparent border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-darkbg font-bold py-3 px-8 rounded-lg transition-all flex items-center justify-center gap-2 w-full md:w-auto">
-                        <i class="fas fa-paper-plane"></i> Transmit Message
-                    </button>
-                </form>
+                        <button type="submit" class="bg-transparent border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-darkbg font-bold py-3 px-8 rounded-lg transition-all flex items-center justify-center gap-2 w-full md:w-auto">
+                            <i class="fas fa-paper-plane"></i> Transmit Message
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
 
